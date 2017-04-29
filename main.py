@@ -22,21 +22,6 @@ class BlogHandler(webapp2.RequestHandler):
         query = Post.all().filter('author =', user).order('-created')
         return query.fetch(limit=limit, offset=offset)
 
-# TODO - filter the query so that only posts by the given user
-#do something similar to get_posts,
-#but you'll need to filter based on the author field.
-
-#If you've properly implemented this method, you will be able
-#to use paths of the form /blog/USERNAME (substituting an actual
-#username for USERNAME) to view recent posts by a specific user.
-#We've done the work of displaying these posts, and properly
-#handling the special URLs, in the routes section at the bottom
-#of main.py, and in BlogIndexHandler.
-
-#To test your code you should create a few posts under multiple
-#user accounts, and check that they display properly when using
-#the user-specific blog URLs.
-
         return None
 
     def get_user_by_name(self, username):
